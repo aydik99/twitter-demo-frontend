@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import TweetItem from "../Tweet";
-import { NavLink } from "react-router-dom";
+import React, { Component, Fragment } from 'react'
+import styled from 'styled-components'
+import TweetItem from './TweetItem'
+import { NavLink } from 'react-router-dom'
 
 const MenuTweets = styled.nav`
   padding: 20px 0;
-`;
+`
 
 const MenuTweetsLink = styled(NavLink)`
   color: #1da1f2;
@@ -13,35 +13,55 @@ const MenuTweetsLink = styled(NavLink)`
   font-weight: Bold;
   font-size: 18px;
   margin: 0 10px;
-`;
+`
 
 const posts = [
   {
-    name: "Every Interact",
-    pinned: "1",
-    data: "2 Mar 2015",
+    name: 'Every Interact',
+    pinned: '1',
+    data: '2 Mar 2015',
     text:
-      "Variable web fonts are coming, and will open a world of opportunities for weight use online",
-    comments: "1",
-    retweet: "17",
-    loves: "22"
+      'Variable web fonts are coming, and will open a world of opportunities for weight use online',
+    comments: '1',
+    retweet: '17',
+    loves: '22'
   },
   {
-    name: "Every Interact",
-    pinned: "0",
-    data: "2 Mar 2015",
+    name: 'Every Interact',
+    pinned: '0',
+    data: '2 Mar 2015',
     text:
-      "Variable web fonts are coming, and will open a world of opportunities for weight use online",
-    comments: "1",
-    retweet: "17",
-    loves: "22"
+      'Variable web fonts are coming, and will open a world of opportunities for weight use online',
+    comments: '1',
+    retweet: '17',
+    loves: '22'
+  },
+  {
+    name: 'Every Interact',
+    pinned: '0',
+    data: '2 Mar 2015',
+    text:
+      'Variable web fonts are coming, and will open a world of opportunities for weight use online',
+    comments: '1',
+    retweet: '17',
+    loves: '22'
+  },
+  {
+    name: 'Every Interact',
+    pinned: '0',
+    data: '2 Mar 2015',
+    text:
+      'Variable web fonts are coming, and will open a world of opportunities for weight use online',
+    comments: '1',
+    retweet: '17',
+    loves: '22'
   }
-];
+]
 
 class ListPosts extends Component {
-  render() {
+  render () {
     return (
-      <div>
+      <Fragment>
         <MenuTweets>
           <MenuTweetsLink to="#">Tweets</MenuTweetsLink>
           <MenuTweetsLink to="#">Tweets&replies</MenuTweetsLink>
@@ -59,11 +79,11 @@ class ListPosts extends Component {
               retweet={item.retweet}
               loves={item.loves}
             />
-          );
+          )
         })}
-      </div>
-    );
+      </Fragment>
+    )
   }
 }
 
-export default ListPosts;
+export default ListPosts
