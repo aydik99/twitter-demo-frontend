@@ -1,0 +1,63 @@
+@import '../node_modules/normalize.css/normalize.css';
+
+body {
+  background-color: #e6ecf0;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header .col-4 {
+  flex-basis: 33.3333%;
+  display: inline-block;
+  padding: 15px 0 0 0;
+}
+
+.col-4 {
+  flex-basis: 33.3333%;
+  display: inline-block;
+}
+
+.col-6 {
+  flex-basis: 36%;
+  display: inline-block;
+}
+
+.col-3 {
+  flex-basis: 25%;
+  display: inline-block;
+}
+
+.col-9 {
+  flex-basis: 75%;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.col-3:nth-child(1) {
+  flex-basis: 25%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 30px 0 0 100px;
+}
+
+.col-4 div {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.col-4:nth-child(3) {
+  padding: 4px 0 0 0;
+}
+
+main .col-3 {
+  margin: 10px 0 0 70px;
+}
+
+main .col-6 {
+  background-color: #fff;
+  margin: 15px 0 0 40px;
+}
