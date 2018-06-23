@@ -10,14 +10,6 @@ const BannerBackground = styled.div`
   background-image: url(${banner});
 `;
 
-class Banner extends Component {
-  render() {
-    return (
-      <div>
-        <BannerBackground src={banner} />
-      </div>
-    );
-  }
-}
+const Banner = () => <BannerBackground src={banner} />;
 
 export default Banner;

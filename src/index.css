@@ -1,6 +1,8 @@
+@import '../node_modules/normalize.css/normalize.css';
+
 body {
   background-color: #e6ecf0;
-  font-family: Helvetica Neue;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .row {
@@ -20,7 +22,7 @@ header .col-4 {
 }
 
 .col-6 {
-  flex-basis: 40%;
+  flex-basis: 36%;
   display: inline-block;
 }
 

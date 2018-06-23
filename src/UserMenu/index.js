@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import UserMenuItem from "../UserMenuItem";
+import UserMenuItem from "./UserMenuItem";
 import more from "./more.png";
 import avatar from "./avatar.png";
 
@@ -47,7 +47,7 @@ const AvatarBigImage = styled.img`
 
 const UserBlockMenu = styled.div`
   position: relative;
-  left: -20px;
+  left: -35px;
   top: -25px;
 `;
 
@@ -62,7 +62,7 @@ const MenuItems = [
     active: "1",
     src: "/EveryInteract"
   },
-   {
+  {
     name: "Following",
     count: "721",
     active: "0",
@@ -85,53 +85,45 @@ const MenuItems = [
     count: "2",
     active: "0",
     src: "/"
-  },
+  }
 ];
 
 const LinkUserBlockItem = styled.a`
-text-decoration: none;
+  text-decoration: none;
 `;
 
-
-class UserMenu extends Component {
-  render() {
-    return (
-      <div>
-        <UserBlock>
-          <div className="row">
-            <div className="col-4">
-              <AvatarBigBlock>
-                <AvatarBigImage src={avatar} />
-              </AvatarBigBlock>
-            </div>
-            
-            <div className="col-4">
-            <UserBlockMenu>
-            {MenuItems.map((item, idx) => {
-          return (
-            <UserMenuItem
-               key={idx}
-              name={item.name}
-              count={item.count}
-              active={item.active}
-              src={item.src}
-            />
-          );
-        })}
-        
-          </UserBlockMenu>
-            </div>
-            <div className="col-4">
-              <Follow>Follow</Follow>
-              <LinkUserBlockItem href="/">
-                <ImgMore src={more} />
-              </LinkUserBlockItem>
-            </div>
-          </div>
-        </UserBlock>
+const UserMenu = () => (
+  <UserBlock>
+    <div className="row">
+      <div className="col-4">
+        <AvatarBigBlock>
+          <AvatarBigImage src={avatar} />
+        </AvatarBigBlock>
       </div>
-    );
-  }
-}
+
+      <div className="col-4">
+        <UserBlockMenu>
+          {MenuItems.map((item, idx) => {
+            return (
+              <UserMenuItem
+                key={idx}
+                name={item.name}
+                count={item.count}
+                active={item.active}
+                src={item.src}
+              />
+            );
+          })}
+        </UserBlockMenu>
+      </div>
+      <div className="col-4">
+        <Follow>Follow</Follow>
+        <LinkUserBlockItem href="/">
+          <ImgMore src={more} />
+        </LinkUserBlockItem>
+      </div>
+    </div>
+  </UserBlock>
+);
 
 export default UserMenu;

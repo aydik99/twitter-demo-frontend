@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styled from "styled-components";
-import twig from "./tick.png";
 import location from "./icons/location.svg";
 import joined from "./icons/joined.svg";
 import link from "./icons/link.svg";
 import { NavLink } from "react-router-dom";
+
+const twig = `${process.env.PUBLIC_URL}/images/tick.png`;
 
 const UserAction = styled.button`
   border: none;
@@ -51,34 +52,30 @@ const UserDetailImg = styled.img`
 
 const UserDetailLink = styled(NavLink);
 
-class UserInfo extends Component {
-  render() {
-    return (
-      <div>
-        <UserName>
-          Every Interaction <Confirmation src={twig} />
-        </UserName>
-        <UserLogin>@EveryInteract Follows you</UserLogin>
-        <UserDesc>
-          UX Design studio focused problem solving creativity. Design to us is
-          how can we make things *work* amazing.
-        </UserDesc>
-        <div className="user_details">
-          <p>
-            <UserDetailImg src={location} /> London, UK
-          </p>
-          <p>
-            <UserDetailImg src={link} />
-            <NavLink to="#">everyinteraction.com</NavLink>
-          </p>
-          <p>
-            <UserDetailImg src={joined} /> Joined May 2008
-          </p>
-        </div>
-        <UserAction> Tweet to</UserAction> <UserAction> Message</UserAction>
-      </div>
-    );
-  }
-}
+const UserInfo = () => (
+  <Fragment>
+    <UserName>
+      Every Interaction <Confirmation src={twig} />
+    </UserName>
+    <UserLogin>@EveryInteract Follows you</UserLogin>
+    <UserDesc>
+      UX Design studio focused problem solving creativity. Design to us is how
+      can we make things *work* amazing.
+    </UserDesc>
+    <div className="user_details">
+      <p>
+        <UserDetailImg src={location} /> London, UK
+      </p>
+      <p>
+        <UserDetailImg src={link} />
+        <NavLink to="#">everyinteraction.com</NavLink>
+      </p>
+      <p>
+        <UserDetailImg src={joined} /> Joined May 2008
+      </p>
+    </div>
+    <UserAction> Tweet to</UserAction> <UserAction> Message</UserAction>
+  </Fragment>
+);
 
 export default UserInfo;
